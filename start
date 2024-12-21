@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeti Customization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .customizer {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .yeti-preview {
+            flex: 1;
+            text-align: center;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .controls {
+            flex: 1;
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .controls label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .controls input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .preview img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #222;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Customize Your Yeti</h1>
+    </header>
+
+    <div class="container">
+        <div class="customizer">
+            <div class="yeti-preview">
+                <h2>Preview</h2>
+                <div class="preview">
+                    <img id="yetiImage" src="yeti-sketch.png" alt="Yeti Preview">
+                </div>
+            </div>
+            <div class="controls">
+                <h2>Customization Options</h2>
+                <label for="color">Yeti Color:</label>
+                <input type="color" id="color" name="color" value="#ffffff">
+
+                <label for="accessory">Accessory:</label>
+                <select id="accessory">
+                    <option value="pipe">Pipe</option>
+                    <option value="hat">Hat</option>
+                    <option value="glasses">Glasses</option>
+                </select>
+
+                <button onclick="customizeYeti()">Apply Customization</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Yeti Customization. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function customizeYeti() {
+            const colorPicker = document.getElementById('color');
+            const accessoryPicker = document.getElementById('accessory');
+
+            // Apply color to Yeti
+            const yetiImage = document.getElementById('yetiImage');
+            const color = colorPicker.value;
+
+            // Simulate color change by applying a filter
+            yetiImage.style.filter = `hue-rotate(${Math.random() * 360}deg)`; // Placeholder for dynamic color updates
+
+            // Log customization choices (future backend integration)
+            console.log(`Yeti Color: ${color}, Accessory: ${accessoryPicker.value}`);
+        }
+    </script>
+</body>
+</html>
